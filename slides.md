@@ -296,3 +296,9 @@ Note: OK, that was pretty basic. Let's do something a little more interesting.
 </code>
 
 Note: Now we're getting somewhere. We *could* just create a ton of tasks, but this is more elegant. We're using `gulp-util` to tack on some flags to our gulp command. This gives us some control over what a given task does, without having to create near-duplicate tasks.
+
+---
+
+## Wrap it up
+
+![Wrap it up!](img/wrap-it-up.gif)
