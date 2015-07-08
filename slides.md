@@ -27,7 +27,7 @@ Note: This isn't the huge problem it once was. We're all using source control th
 
 But what if you're *not* building a single site? It's completely common for one site to be composed of several different applications. The example I'm going to focus on is when you have one design that powers multiple sites. I'm also going to cover a few tools that I use regularly, some of which you may already be familiar with.
 
-The problem with maintaining a design across multiple sites is that it means you need to either move your styles around or rewrite them for each site. Rewriting is a recipe for disaster. Trust me—you're not going to get it exactly right. So that leaves moving them around. This isn't something you want to do manually. It's just a problem waiting to happen, and besides that, it's another thankless task that needs to get done over and over again. 
+The problem with maintaining a design across multiple sites is that it means you need to either move your styles around or rewrite them for each site. Rewriting is a recipe for disaster. Trust me—you're not going to get it exactly right. So that leaves moving them around. This isn't something you want to do manually. It's just a problem waiting to happen, and besides that, it's another thankless task that needs to get done over and over again.
 
 ---
 
@@ -153,11 +153,39 @@ This worked because we were using the very same CSS codebase.
 
 ![War Room](img/war-room.jpg)
 
-Note: I hate to bring ink and paper into this, but it can be useful to have something physical to help you really understand what you're getting into.
+Note: So let's get started. I hate to bring ink and paper into this, but it can be useful to have something physical to help you really understand what you're getting into. This is actually what our war room looked like. You probably don't have access to printers that can do this. But that's OK. Work with what you've got.
+
+The very first order of business is to make sense of them! A little bit of planning goes a long way. If you are going to be the steward of a design, you need to truly *understand* it.
 
 --
 
-## Getting started
+## Go deeper
+
+![Inception](img/inception.gif)
+
+Note: A bunch of comps or wireframes is a great start but you need to *really* know what you're getting yourself into. Printing them is just the start. We need to go deeper.
+
+--
+
+## Break it down
+
+![Corkboard](img/corkboard.jpg)
+
+Note: Get an understanding of what you're creating before you start writing code.
+
+Remember all those PSDs I mentioned?
+
+If you're implementing a design that was given to you after going through a "legacy" design process—that is, one with lots of PSDs, you're going to quickly start to notice inconsistent and redundant elements.
+
+Knock these out. Seriously.
+
+Make an executive decision or get an answer out of your designer and decide which is the right one. In a large enough project, you're going find plenty of elements that either don't have a clear purpose, or serve essentially the same purpose as another element. Don't create more elements than you need to. Every one-off element adds overhead to your project. Do you really want to maintain three different carousels or tabbed elements? If it turns out the similar-but-different elements actually have different enough *meanings* or *functionality*, then build both—but understand the differences and document them.
+
+Pattern Lab provides methods to help you easily create and maintain variations on elements, when you know you need them.
+
+--
+
+## Atomic Design
 
 <div class="whiteboard">
   <img src="img/whiteboard-1.jpg" alt="Whiteboard 1" class="fragment" data-fragment-index="1">
@@ -178,17 +206,9 @@ Note: I hate to bring ink and paper into this, but it can be useful to have some
   <img src="img/whiteboard-16.jpg" alt="Whiteboard 16" class="fragment" data-fragment-index="16">
 </div>
 
-Note: Remember all those PSDs I mentioned?
+Note: You're probably going to identify a lot of elements. I broke it all down on a whiteboard. Remember: Get organized. Depending on your team's workflows, you might want to get all of these things into your project tracking system. Your project managers will thank you. Or hate you, depending on how overworked they are.
 
-The very first order of business is to make sense of them! A little bit of planning goes a long way. If you are going to be the steward of a design, you need to truly *understand* it.
-
-If you're implementing a design that was given to you after going through a "legacy" design process—that is, one with lots of PSDs, you're going to quickly start to notice inconcistencies.
-
-Knock these out. Seriously.
-
-Make an executive decision or get an answer out of your designer and decide which is the right one. In a large enough project, you're going find plenty of elements that either don't have a clear purpose, or serve essentially the same purpose as another element. Don't create more elements than you need to. Every one-off element adds overhead to your project. Do you really want to maintain three different carousels or tabbed elements? If it turns out the similar-but-different elements actually have different *meanings*, then build both—but understand the differences and document them. Pattern Lab provides methods to help you easily create and maintain variations on elements, when you know you need them.
-
-The next order of business is to get these things into Pattern Lab. I could go on and on about the details of using Pattern Lab, but that's already been done plenty of times, and besides that, the documentation is excellent. I'm going to discuss it, but I won't get too far into the weeds.
+Once you've broken things down, start naming what you've got. This is the start of your Atoms, Molecules, and Organisms that will be the basis of everything you build in Pattern Lab. I could go on and on about the details of using Pattern Lab, but that's already been done plenty of times, and besides that, the documentation is excellent. I'm going to touch on it, but I won't get too far into the weeds.
 
 ---
 
@@ -196,19 +216,28 @@ The next order of business is to get these things into Pattern Lab. I could go o
 
 ![Pattern Lab](img/thumb-patternlab.jpg)
 
-Note: So let's talk about Pattern Lab. Pattern Lab is really easy to use. There's a learning curve, but you can be productive in pretty much no time.
+Note: Pattern Lab is really easy to use. There's definitely a learning curve, but you can be productive in pretty much no time.
 
-Dave and Brad tell you that you should start by tossing the demo files. Before you do that, study them a bit. It's the best resource you've got to help you understand how all of this is put together. Even though you should pull them out of your project, you should consider keeping a copy of them handy to refer back to.
+Dave (Olsen) and Brad (Frost) tell you that you should start by tossing the demo files. Before you do that, study them a bit. It's the best resource you've got to help you understand how all of this is put together. Even though you should pull them out of your project, consider keeping a copy handy to refer back to.
+
+The hardest thing about Pattern Lab isn't writing a bunch of JSON data or Mustache templates, it's deciding what's what. Your Atoms should be fairly straightforward to identify. But what's a Molecule? What's an Organism? Can a Molecule include another Molecule? Certainly, but are you sure you want to do that? That's a call you need to make. You can even blow out the entire metaphor of Atomic Design and come up with your own system. It's just a matter of renaming the folders.
 
 ---
 
-## Gulp time
+## Gulp
 
+![Jake](img/jake.gif)
+
+Note:
+
+=-=-=-=
+    ## Here's how to install Gulp, if anybody's curious
     $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew install node
     $ npm install -g gulp
+=-=-=-
 
-Note: So you've got Pattern Lab installed. Remember how we're pulling pretty much everything out of it? Well, we need to replace it with something. And in this case, we're starting with the styles. And because we're not savages, we're using Sass.
+So you've got Pattern Lab installed. Remember how we're pulling pretty much everything out of it? Well, we need to replace it with something. And in this case, we're starting with the styles. And because we're not savages, we're using Sass.
 
 You might already be familiar with Gulp. If not, don't worry. It's not hard to get up and running. Here it is in just a few commands.
 
@@ -216,9 +245,7 @@ Without getting too detailed, what we're doing here is installing Homebrew, Node
 
 --
 
-![Fork](img/mermaid.gif)
-
-    $ npm install
+![Zelda](img/zelda.gif)
 
 ####[sdd-pl-demo](https://github.com/freshyill/sdd-pl-demo)
 
@@ -226,15 +253,13 @@ Note: We're on the cusp of turning this into a Node project. Normally you'd star
 
 This is going to be out of date as soon as Dave Olsen makes a change to Pattern Lab. So while you probably don't want to use this repository to start your own projects, you can still use the package.json, Gulpfile, and a few other things to help get you started.
 
+There's probably some good Yeoman generators out there to help out with stuff like this, but again, that's overkill. Unless you're giving the exact same talk that I'm in the middle of giving, I don't expect what's here to work for anybody out of the box. Besides, that would not be cool. So dig in and take what you need, but realize there's no one-size-fits-all solution.
+
 --
 
 ## Wait&hellip; what?
 
-<code class="fragment">
-
-    $ gulp
-
-</code>
+<code class="fragment">`$ gulp`</code>
 
 Note: Yeah we just did a whole lot. Let's recap: You've got a Pattern Lab site, with Gulp, Sass and BrowserSync all set up.
 
