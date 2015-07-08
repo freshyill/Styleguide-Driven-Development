@@ -25,13 +25,17 @@ AAAS/<i>Science</i>
 
 Note: This isn't the huge problem it once was. We're all using source control these days. That's the biggest thing you can do to keep design in check on a single site.
 
-But what if you're *not* building a single site? It's completely common for one site to be composed of several different applications. The example I'm going to focus on, however, is when you have one design that powers multiple sites.
+But what if you're *not* building a single site? It's completely common for one site to be composed of several different applications. The example I'm going to focus on is when you have one design that powers multiple sites. I'm also going to cover a few tools that I use regularly, some of which you may already be familiar with.
+
+The problem with maintaining a design across multiple sites is that it means you need to either move your styles around or rewrite them for each site. Rewriting is a recipe for disaster. Trust me—you're not going to get it exactly right. So that leaves moving them around. This isn't something you want to do manually. It's just a problem waiting to happen, and besides that, it's another thankless task that needs to get done over and over again. 
 
 ---
 
 ## Machines to the rescue
 
 ![Iron Man 1](img/tank.gif)
+
+Note: Luckily, we've got machines to do thankless tasks for us out these days. I probably don't need to tell you about the proliferation of tools we've seen over the past few years.
 
 --
 
@@ -266,4 +270,4 @@ Note: OK, that was pretty basic. Let's do something a little more interesting.
 
 </code>
 
-Note: Now we're getting somewhere. We're using `gulp-util` to tack on some flags to our gulp command.
+Note: Now we're getting somewhere. We *could* just create a ton of tasks, but this is more elegant. We're using `gulp-util` to tack on some flags to our gulp command. This gives us some control over what a given task does, without having to create near-duplicate tasks.
