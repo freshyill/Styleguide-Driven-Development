@@ -309,7 +309,7 @@ Note: I've been talking a lot here but now it's time to show you some of this in
 ## Gulpfile
 
 ### Window 1
-* Let's start Pattern La
+* Let's start Pattern Lab
 
 ### Window 2
 * Let's break down the Gulpfile - refer to comments
