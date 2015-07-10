@@ -1,6 +1,6 @@
 # Styleguide-Driven Development
 
-Note:
+Note: This presentation is called≥
 
 --
 
@@ -10,7 +10,9 @@ Note:
 
 # Design as a Dependency
 
-Note: Describe presentation
+Note: 
+
+* Everybody's probably heard of it
 
 I'm also going to cover a few tools that I use regularly, some of which you may already be familiar with, but this may be a novel implementation.
 
@@ -31,6 +33,10 @@ What is Science
 What do I do?
 
 What have I been working on?
+
+What does Science do?
+
+What does AAAS do?
 
 ---
 
