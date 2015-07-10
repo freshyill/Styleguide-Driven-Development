@@ -1,6 +1,6 @@
 # Styleguide-Driven Development
 
-Note: This presentation is called≥
+Note: This presentation is called…
 
 --
 
